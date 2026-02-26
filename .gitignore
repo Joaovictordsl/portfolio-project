@@ -1,0 +1,27 @@
+# 1. Ignorar pastas de sistema do Terraform
+.terraform/
+
+# 2. Ignorar arquivos de estado local (pois eles vão para o S3)
+*.tfstate
+*.tfstate.*
+
+# 3. Ignorar variáveis sensíveis (onde você coloca senhas para testar local)
+*.tfvars
+*.tfvars.json
+
+# 4. Ignorar arquivos de log e crash
+crash.log
+*.usage.tfplan
+
+# 5. Ignorar arquivos de plano (podem conter segredos em texto puro)
+*.tfplan
+
+# 6. Ignorar diretórios de override
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# 7. Ignorar arquivos de configuração da CLI (caso você tenha algum local)
+.terraformrc
+terraform.rc
